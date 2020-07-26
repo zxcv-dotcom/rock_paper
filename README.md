@@ -1,2 +1,2 @@
 # rock_paper
-Game for Vir
+Game for kids
