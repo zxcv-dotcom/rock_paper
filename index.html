@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1> Rock, Paper, Scissors for Vir</h1>
+
+<p>Enter your selection and Click the button for Computer to make a play</p>
+
+<p> Number of turns played: </p>
+<p id="turns"></p>
+
+<script>
+
+var i = 0;
+document.getElementById("turns").innerHTML = i;
+
+</script>
+
+
+
+  <p><input id="your_play"><button onclick="compareResult()">Your play</button></p>
+
+  <p> Computer chose: </p>
+  <p id="result"></p>
+
+  <p> You chose: </p>
+  <p id="your_answer"></p>
+
+  <p> Outcome is: </p>
+  <p id="outcome"></p>
+
+  <p> Total Computer won: </p>
+  <p id="computerWins"></p>
+
+  <p> Total You won: </p>
+  <p id="youWins"></p>
+
+
+<script>
+
+
+
+function compareResult() {
+
+i= i+1;
+document.getElementById("turns").innerHTML = i;
+    var computerWins = 0;
+    var youWins = 0;
+
+      var your_answer;
+      var computerChose;
+
+      var plays = ["rock", "paper", "scissor"];
+      var x = Math.floor((Math.random() * 3)+.01);
+      // computerChose += plays[x];
+      document.getElementById("result").innerHTML = plays[x];
+
+
+      var computer_answer = document.getElementById("result").innerHTML;
+      // result = computer_answer;
+      document.getElementById("result").innerHTML = computer_answer;
+
+      your_answer = document.getElementById("your_play").value;
+      document.getElementById("your_answer").innerHTML = your_answer;
+
+        if (computer_answer === your_answer) {
+        document.getElementById("outcome").innerHTML = "tie";
+        }
+        else if (computer_answer == "rock" && your_answer == "scissor"){
+          document.getElementById("outcome").innerHTML = "Computer wins";
+          computerWins = computerWins+1;
+          document.getElementById('computerWins').innerHTML = computerWins;
+          }
+        else if (computer_answer == "rock" && your_answer == "paper") {
+          document.getElementById("outcome").innerHTML = "You win";
+          youWins=youWins+1;
+          document.getElementById('youWins').innerHTML = youWins;
+        }
+        else if (computer_answer == "paper" && your_answer == "scissor") {
+          document.getElementById("outcome").innerHTML = "You win";
+          youWins=youWins+1;
+          document.getElementById('youWins').innerHTML = youWins;
+        }
+        else if (computer_answer == "paper" && your_answer == "rock") {
+          document.getElementById("outcome").innerHTML = "Computer wins";
+          computerWins = computerWins+1;
+          document.getElementById('computerWins').innerHTML = computerWins;
+        }
+        else if (computer_answer == "scissor" && your_answer == "rock") {
+          document.getElementById("outcome").innerHTML = "You win";
+          youWins=youWins+1;
+          document.getElementById('youWins').innerHTML = youWins;
+        }
+        else if (computer_answer == "scissor" && your_answer == "paper") {
+          document.getElementById("outcome").innerHTML = "Computer wins";
+          computerWins = computerWins+1;
+          document.getElementById('computerWins').innerHTML = computerWins;
+        }
+  }
+
+
+</script>
+
+</body>
+</html>
