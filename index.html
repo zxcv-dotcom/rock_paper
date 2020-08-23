@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html>
+<head> <link rel="stylesheet" href="rock.css">
+</head>
+
 <body>
 
-<h1> Rock, Paper, Scissors for Vir</h1>
+<h1 id = "header_mainpage"> Rock, Paper, Scissors for Vir</h1>
 
-<p>Enter your selection and Click the button for Computer to make a play</p>
+<img id = "picture_rock_paper_scissor" src="rock.jpeg" alt="Picture of rock" width="200" height="200">
+<img id = "picture_rock_paper_scissor" src="paper.jpeg" alt="Picture of paper" width="200" height="200">
+<img id = "picture_rock_paper_scissor" src="scissor.jpeg" alt="Picture of paper" width="200" height="200">
 
-<p> Number of turns played: </p>
+
+
+<p id = "instructions">Enter your selection and Click the button for Computer to make a play</p>
+
+<p id = "instructions"> Number of turns played: </p>
 <p id="turns"></p>
 
 <script>
@@ -17,9 +26,18 @@ document.getElementById("turns").innerHTML = i;
 </script>
 
 
+<!-- if you wanted to enter it as an input value free form field -->
+  <!-- <p><input id="your_play"><button onclick="compareResult()">Your play</button></p> -->
 
-  <p><input id="your_play"><button onclick="compareResult()">Your play</button></p>
+<label for="rock_paper_scissor">Choose a play:</label>
+  <select name="rock_paper_scissor" id="rock_paper_scissor">
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissor">Scissor</option>
 
+  </select>
+  <br><br>
+<p id = "your_play"><button onclick="compareResult()">Your play</button></p>
   <p> Computer chose: </p>
   <p id="result"></p>
 
@@ -60,7 +78,11 @@ document.getElementById("turns").innerHTML = i;
       // result = computer_answer;
       document.getElementById("result").innerHTML = computer_answer;
 
-      your_answer = document.getElementById("your_play").value;
+your_answer = rock_paper_scissor.value
+// below greyed out is if you wanted to enter it as an input value free form field
+      // your_answer = document.getElementById("your_play").value;
+
+// sending it back to show on the screen what you chose
       document.getElementById("your_answer").innerHTML = your_answer;
 
         if (computer_answer === your_answer) {

@@ -1,0 +1,27 @@
+#header_mainpage {
+  color: blue;
+
+  font-size: 1.2em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#instructions {
+  color: blue;
+  font-size: 1.2em;
+  text-align: center;
+
+}
+
+#turns {
+  color: blue;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+#picture_rock_paper_scissor {
+  float:center;
+  border-style: solid;
+  border-color: black;
+  margin-right: 100px;
+}
