@@ -3,14 +3,29 @@
 <head> <link rel="stylesheet" href="rock.css">
 </head>
 
+<header>
+    <nav id="header-nav" class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+
+          <div class="navbar-brand">
+            <p id = "company_brand"> Vik's Games, LLC
+            </p>
+          </div>
+<p id = "title"> Rock, Paper, Scissor for Vir and Kyra! </p>
+        </div>
+      </div>
+    </nav>
+</header>
+
 <body>
 
-<h1 id = "header_mainpage"> Rock, Paper, Scissors for Vir</h1>
-
-<img id = "picture_rock_paper_scissor" src="rock.jpeg" alt="Picture of rock" width="200" height="200">
-<img id = "picture_rock_paper_scissor" src="paper.jpeg" alt="Picture of paper" width="200" height="200">
-<img id = "picture_rock_paper_scissor" src="scissor.jpeg" alt="Picture of paper" width="200" height="200">
-
+<h1 id = "header_mainpage"> Play to win against the computer</h1>
+<!-- <div class = "container-fluid">
+<!-- <img id = "picture_rock_paper_scissor" src="rock.jpeg" alt="Picture of rock" width="50" height="50">
+<img id = "picture_rock_paper_scissor" src="paper.jpeg" alt="Picture of paper" width="50" height="50">
+<img id = "picture_rock_paper_scissor" src="scissor.jpeg" alt="Picture of paper" width="50" height="50"> -->
+<!-- </div>  -->
 
 
 <p id = "instructions">Enter your selection and Click the button for Computer to make a play</p>
@@ -37,12 +52,17 @@ document.getElementById("turns").innerHTML = i;
 
   </select>
   <br><br>
-<p id = "your_play"><button onclick="compareResult()">Your play</button></p>
-  <p> Computer chose: </p>
-  <p id="result"></p>
+<p id = "your_play"><button onclick="compareResult(); showPictureYourAnswer(); showPictureComputerAnswer();">Your play</button></p>
 
   <p> You chose: </p>
   <p id="your_answer"></p>
+
+  <div id="picture1"></div>
+
+  <p> Computer chose: </p>
+  <p id="result"></p>
+  <div id="picture2"></div>
+
 
   <p> Outcome is: </p>
   <p id="outcome"></p>
@@ -62,8 +82,8 @@ function compareResult() {
 
 i= i+1;
 document.getElementById("turns").innerHTML = i;
-    var computerWins = 0;
-    var youWins = 0;
+    var computerWins = document.getElementById('computerWins').innerHTML;
+    var youWins = document.getElementById('youWins').innerHTML;
 
       var your_answer;
       var computerChose;
@@ -90,38 +110,82 @@ your_answer = rock_paper_scissor.value
         }
         else if (computer_answer == "rock" && your_answer == "scissor"){
           document.getElementById("outcome").innerHTML = "Computer wins";
-          computerWins = computerWins+1;
+          computerWins = Number(computerWins)+1;
           document.getElementById('computerWins').innerHTML = computerWins;
           }
         else if (computer_answer == "rock" && your_answer == "paper") {
           document.getElementById("outcome").innerHTML = "You win";
-          youWins=youWins+1;
+          youWins=Number(youWins)+1;
           document.getElementById('youWins').innerHTML = youWins;
         }
         else if (computer_answer == "paper" && your_answer == "scissor") {
           document.getElementById("outcome").innerHTML = "You win";
-          youWins=youWins+1;
+          youWins=Number(youWins)+1;
           document.getElementById('youWins').innerHTML = youWins;
         }
         else if (computer_answer == "paper" && your_answer == "rock") {
           document.getElementById("outcome").innerHTML = "Computer wins";
-          computerWins = computerWins+1;
+          computerWins = Number(computerWins)+1;
           document.getElementById('computerWins').innerHTML = computerWins;
         }
         else if (computer_answer == "scissor" && your_answer == "rock") {
           document.getElementById("outcome").innerHTML = "You win";
-          youWins=youWins+1;
+          youWins=Number(youWins)+1;
           document.getElementById('youWins').innerHTML = youWins;
         }
         else if (computer_answer == "scissor" && your_answer == "paper") {
           document.getElementById("outcome").innerHTML = "Computer wins";
-          computerWins = computerWins+1;
+          computerWins = Number(computerWins)+1;
           document.getElementById('computerWins').innerHTML = computerWins;
         }
-  }
+  };
+
+
+
+
+function showPictureComputerAnswer() {
+
+var computer_answer = document.getElementById("result").innerHTML;
+
+if (computer_answer == "rock") {
+  var pictureComputerAnswer = '<img src="rock.jpeg" alt="Picture of rock" width="50" height="50">';
+  document.getElementById("picture2").innerHTML = pictureComputerAnswer;
+}
+else if (computer_answer == "paper") {
+  var pictureComputerAnswer = '<img src="paper.jpeg" alt="Picture of paper" width="50" height="50">';
+  document.getElementById("picture2").innerHTML = pictureComputerAnswer;
+}
+else if (computer_answer == "scissor") {
+  var pictureComputerAnswer = '<img src="scissor.jpeg" alt="Picture of paper" width="50" height="50">';
+  document.getElementById("picture2").innerHTML = pictureComputerAnswer;
+}
+
+
+};
+
+
+function showPictureYourAnswer() {
+
+your_answer = rock_paper_scissor.value
+
+var pictureYourAnswer;
+if (your_answer == "rock") {
+  pictureYourAnswer = '<img src="rock.jpeg" alt="Picture of rock" width="50" height="50">';
+}
+else if (your_answer == "paper") {
+  pictureYourAnswer = '<img src="paper.jpeg" alt="Picture of paper" width="50" height="50">';
+}
+else if (your_answer == "scissor") {
+  pictureYourAnswer = '<img src="scissor.jpeg" alt="Picture of paper" width="50" height="50">';
+
+}
+
+document.getElementById("picture1").innerHTML = pictureYourAnswer;
+};
 
 
 </script>
+
 
 </body>
 </html>

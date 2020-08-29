@@ -1,5 +1,6 @@
 #header_mainpage {
-  color: blue;
+  color: grey;
+  font-style: italic;
 
   font-size: 1.2em;
   text-align: center;
@@ -20,8 +21,59 @@
 }
 
 #picture_rock_paper_scissor {
-  float:center;
+  float:relative;
   border-style: solid;
   border-color: black;
   margin-right: 100px;
+  position:absolute;
+}
+
+.container, .container-fluid {
+  height: 150px;
+
+  background-color: blue;
+  border: 1px black;
+  position: relative;
+}
+
+#header-nav {
+  background-color: blue;
+  border-radius: 0;
+  border: 10px black;
+  padding: 10px;
+}
+
+
+.navbar-brand {
+  height: 50px;
+  width: 100px;
+  float: relative;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  background-color: black;
+  border: 1px white;
+  text-align: left;
+  color: white;
+  font-family: 'Lora', serif;
+  top: 0px;
+  left: 0px;
+}
+
+#company_brand {
+  color: white;
+  font-family: sans-serif;
+  font-size: 10px;
+  position: absolute;
+  float: relative;
+  top: 10px;
+  left: 10px;
+
+}
+
+#title {
+  color: white;
+  font-family: sans-serif;
+  font-size: 40px;
+  text-align: center;
+
 }
